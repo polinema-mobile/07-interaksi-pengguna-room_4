@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="edit_text_nim" type="id" />
+    <item name="button" type="id" />
+    <item name="edit_text_namamahasiswa" type="id" />
+    <item name="edit_tanggal_lahir" type="id" />
+</resources>
