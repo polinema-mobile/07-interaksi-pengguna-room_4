@@ -25,9 +25,10 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
+                android:autofillHints="@string/nama"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="Nama Mahasiswa"
+                android:hint="Nama Mahasiswa"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -41,9 +42,10 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
+                android:autofillHints="@string/nim"
                 android:ems="10"
                 android:inputType="numberSigned"
-                android:text="Nomor Induk Mahasiswa"
+                android:hint="Nomor Induk Mahasiswa"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edtNama" />
@@ -57,9 +59,10 @@
                 android:layout_marginTop="15dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
+                android:autofillHints="@string/tgl_lahir"
                 android:ems="10"
                 android:inputType="date"
-                android:text="Tanggal Lahir"
+                android:hint="Tanggal Lahir"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/edtNim" />
@@ -68,9 +71,11 @@
                 android:id="@+id/radioGroup"
                 android:layout_width="376dp"
                 android:layout_height="32dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginRight="10dp"
                 android:orientation="horizontal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -78,15 +83,17 @@
 
                 <RadioButton
                     android:id="@+id/radioButton"
-                    android:layout_width="187dp"
+                    android:layout_width="185dp"
                     android:layout_height="wrap_content"
-                    android:text="Laki Laki" />
+                    android:autofillHints="@string/laki_laki"
+                    android:hint="Laki Laki" />
 
                 <RadioButton
                     android:id="@+id/radioButton2"
-                    android:layout_width="187dp"
+                    android:layout_width="185dp"
                     android:layout_height="wrap_content"
-                    android:text="Perempuan" />
+                    android:autofillHints="@string/perempuan"
+                    android:hint="Perempuan" />
             </RadioGroup>
 
             <Spinner
@@ -98,7 +105,7 @@
                 android:layout_marginTop="12dp"
                 android:layout_marginEnd="10dp"
                 android:layout_marginRight="10dp"
-                android:entries="@array/android_dropdown_arrays"
+                android:entries="@array/jurusan"
                 android:longClickable="false"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"

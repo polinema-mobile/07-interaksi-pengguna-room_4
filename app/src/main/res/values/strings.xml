@@ -1,6 +1,13 @@
 <resources>
     <string name="app_name">07-interaksi-pengguna-room_4</string>
-    <string-array name="android_dropdown_arrays">
+    <string name="nama">Nama Mahasiswa</string>
+    <string name="nim">Nomor Induk Mahasiswa</string>
+    <string name="tgl_lahir">Tanggal Lahir</string>
+    <string name="laki_laki">Laki-laki</string>
+    <string name="perempuan">Perempuan</string>
+    <string name="jenis_kelamin">Jenis kelamin</string>
+    <string name="jurusan">Jurusan</string>
+    <string-array name="jurusan">
         <item>Teknologi Informasi</item>
         <item>Teknologi Mesin</item>
         <item>Teknologi Sipil</item>
