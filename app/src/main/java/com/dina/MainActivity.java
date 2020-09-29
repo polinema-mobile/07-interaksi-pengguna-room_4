@@ -72,12 +72,12 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("data1", edtNama.getText().toString());
                 intent.putExtra("data2", edtNim.getText().toString());
                 intent.putExtra("data3", edtTanggalLahir.getText().toString());
-                intent.putExtra("data4", jenis_kelamin.toString());
+                intent.putExtra("data3", edtTanggalLahir.getText().toString());
                 if(radioButton.isChecked()){
                     radioButton = (RadioButton) findViewById(selectedId);
-                    intent.putExtra("data5", radioButton.getText().toString());
+                    intent.putExtra("data4", radioButton.getText().toString());
                 }else{
-                    intent.putExtra("data5", radioButton2.getText().toString());
+                    intent.putExtra("data4", radioButton2.getText().toString());
                 }
                 intent.putExtra("data6", spinnerJurusan.getSelectedItem().toString());
                 startActivity(intent);
