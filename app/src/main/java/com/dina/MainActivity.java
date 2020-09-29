@@ -17,6 +17,7 @@ import android.widget.Spinner;
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
+    private RadioGroup radioGroup;
     private RadioGroup jenis_kelamin;
     private RadioButton radioButton, radioButton2;
     EditText edtTanggalLahir, edtNama, edtNim;
@@ -49,14 +50,20 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        edtNama = (EditText) findViewById(R.id.edtNama);
+        edtNim = (EditText) findViewById(R.id.edtNim);
+        edtTanggalLahir = (EditText) findViewById(R.id.edtTanggalLahir);
+        radioGroup = findViewById(R.id.radioGroup);
         jenis_kelamin = findViewById(R.id.radioGroup);
         radioButton = findViewById(R.id.radioButton);
         radioButton2 = findViewById(R.id.radioButton2);
+        spinnerJurusan =(Spinner) findViewById(R.id.spinnerJurusan);
         btnGet = (Button) findViewById(R.id.btnSubmit);
         btnGet.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                int selectedId = jenis_kelamin.getCheckedRadioButtonId();
+                int selectedId = radioGroup.getCheckedRadioButtonId();
                 /**
                  * Passing data via Intent
                  */
@@ -65,13 +72,14 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("data1", edtNama.getText().toString());
                 intent.putExtra("data2", edtNim.getText().toString());
                 intent.putExtra("data3", edtTanggalLahir.getText().toString());
+                intent.putExtra("data4", jenis_kelamin.toString());
                 if(radioButton.isChecked()){
                     radioButton = (RadioButton) findViewById(selectedId);
-                    intent.putExtra("data4", radioButton.getText().toString());
+                    intent.putExtra("data5", radioButton.getText().toString());
                 }else{
-                    intent.putExtra("data4", radioButton2.getText().toString());
+                    intent.putExtra("data5", radioButton2.getText().toString());
                 }
-                intent.putExtra("data5", spinnerJurusan.getSelectedItem().toString());
+                intent.putExtra("data6", spinnerJurusan.getSelectedItem().toString());
                 startActivity(intent);
             }
         });
