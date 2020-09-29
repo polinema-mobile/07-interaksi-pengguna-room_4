@@ -59,7 +59,6 @@
             android:layout_width="376dp"
             android:layout_height="32dp"
             android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:orientation="horizontal"
@@ -68,14 +67,14 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName3">>
             <RadioButton
                 android:id="@+id/radioButton"
-                android:layout_width="120dp"
-                android:layout_height="35dp"
+                android:layout_width="187dp"
+                android:layout_height="wrap_content"
                 android:text="Laki Laki" />
 
             <RadioButton
                 android:id="@+id/radioButton2"
-                android:layout_width="120dp"
-                android:layout_height="35dp"
+                android:layout_width="187dp"
+                android:layout_height="wrap_content"
                 android:text="Perempuan" />
         </RadioGroup>
 
@@ -88,8 +87,8 @@
             android:layout_marginTop="12dp"
             android:layout_marginEnd="10dp"
             android:layout_marginRight="10dp"
-            android:longClickable="false"
             android:entries="@array/android_dropdown_arrays"
+            android:longClickable="false"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
