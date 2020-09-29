@@ -3,18 +3,27 @@ package com.dina;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 
 import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
-    EditText edtTanggalLahir;
+    private RadioGroup jenis_kelamin;
+    private RadioButton radioButton, radioButton2;
+    EditText edtTanggalLahir, edtNama, edtNim;
+    Spinner spinnerJurusan;
     Calendar calendar;
     DatePickerDialog picker;
+    Button btnGet;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,19 +33,46 @@ public class MainActivity extends AppCompatActivity {
         edtTanggalLahir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                calendar= Calendar.getInstance();
+                calendar = Calendar.getInstance();
                 int day = calendar.get(Calendar.DAY_OF_MONTH);
                 int month = calendar.get(Calendar.MONTH);
                 int year = calendar.get(Calendar.YEAR);
 
                 // date picker dialog
-                picker=new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
+                picker = new DatePickerDialog(MainActivity.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
                     public void onDateSet(DatePicker datePicker, int year, int monthOfYear, int dayOfMonth) {
-                        edtTanggalLahir.setText(dayOfMonth+"/"+(monthOfYear+1)+"/"+year);
+                        edtTanggalLahir.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
                     }
                 }, year, month, day);
                 picker.show();
+            }
+        });
+
+        jenis_kelamin = findViewById(R.id.radioGroup);
+        radioButton = findViewById(R.id.radioButton);
+        radioButton2 = findViewById(R.id.radioButton2);
+        btnGet = (Button) findViewById(R.id.btnSubmit);
+        btnGet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int selectedId = jenis_kelamin.getCheckedRadioButtonId();
+                /**
+                 * Passing data via Intent
+                 */
+
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                intent.putExtra("data1", edtNama.getText().toString());
+                intent.putExtra("data2", edtNim.getText().toString());
+                intent.putExtra("data3", edtTanggalLahir.getText().toString());
+                if(radioButton.isChecked()){
+                    radioButton = (RadioButton) findViewById(selectedId);
+                    intent.putExtra("data4", radioButton.getText().toString());
+                }else{
+                    intent.putExtra("data4", radioButton2.getText().toString());
+                }
+                intent.putExtra("data5", spinnerJurusan.getSelectedItem().toString());
+                startActivity(intent);
             }
         });
     }

@@ -7,45 +7,95 @@
     tools:context=".MainActivity2">
 
     <TextView
-        android:id="@+id/Nama_mahasiswa"
-        android:layout_width="381dp"
-        android:layout_height="48dp"
+        android:id="@+id/tv_item_name"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.075"
+        android:text="Nama Mahasiswa"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="16dp" />
 
     <TextView
-        android:id="@+id/nim"
-        android:layout_width="378dp"
-        android:layout_height="53dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.075"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Nama_mahasiswa" />
+        android:id="@+id/tv_item_nim"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="NIM"
+        app:layout_constraintStart_toStartOf="@id/tv_item_name"
+        app:layout_constraintTop_toBottomOf="@id/tv_item_name" />
 
     <TextView
-        android:id="@+id/tanggal_lahir"
-        android:layout_width="376dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="16dp"
-        android:text="Tanggal Lahir :"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.075"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nim" />
+        android:id="@+id/tv_item_birth_date"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/tgl_lahir"
+        app:layout_constraintStart_toStartOf="@id/tv_item_nim"
+        app:layout_constraintTop_toBottomOf="@id/tv_item_nim" />
 
     <TextView
-        android:id="@+id/kelamin"
-        android:layout_width="379dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="16dp"
-        android:text="kelamin :"
+        android:id="@+id/tv_item_gender"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/jenis_kelamin"
+        app:layout_constraintStart_toStartOf="@id/tv_item_birth_date"
+        app:layout_constraintTop_toBottomOf="@id/tv_item_birth_date" />
+
+    <TextView
+        android:id="@+id/tv_item_department"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/jurusan"
+        app:layout_constraintStart_toStartOf="@id/tv_item_gender"
+        app:layout_constraintTop_toBottomOf="@id/tv_item_gender" />
+
+    <TextView
+        android:id="@+id/tv_name_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_item_name"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.075"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tanggal_lahir" />
+        app:layout_constraintStart_toEndOf="@+id/tv_item_name"
+        app:layout_constraintTop_toTopOf="@+id/tv_item_name" />
+
+    <TextView
+        android:id="@+id/tv_nim_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_item_nim"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_item_nim"
+        app:layout_constraintTop_toTopOf="@+id/tv_item_nim" />
+
+    <TextView
+        android:id="@+id/tv_birth_date_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_item_birth_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_item_birth_date"
+        app:layout_constraintTop_toTopOf="@+id/tv_item_birth_date" />
+
+    <TextView
+        android:id="@+id/tv_gender_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_item_gender"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_item_gender"
+        app:layout_constraintTop_toTopOf="@+id/tv_item_gender" />
+
+    <TextView
+        android:id="@+id/tv_department_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_item_department"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_item_department"
+        app:layout_constraintTop_toTopOf="@+id/tv_item_department" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

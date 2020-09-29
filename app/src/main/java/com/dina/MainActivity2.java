@@ -12,14 +12,35 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        TextView namaMhs = (TextView) findViewById(R.id.Nama_mahasiswa);
-        TextView nimMhs = (TextView) findViewById(R.id.nim);
-        Intent intent = getIntent();
-        String name = intent.getStringExtra("NAME");
-        String nim = intent.getStringExtra("NIM");
+        TextView tvData1 = (TextView) findViewById(R.id.tv_name_content);
+        TextView tvData2 = (TextView) findViewById(R.id.tv_nim_content);
+        TextView tvData3 = (TextView) findViewById(R.id.tv_birth_date_content);
+        TextView tvData4 = (TextView) findViewById(R.id.tv_gender_content);
+        TextView tvData5 = (TextView) findViewById(R.id.tv_department_content);
+        /**
+         * Kita cek apakah ada Bundle atau tidak
+         */
+        if(getIntent().getExtras()!=null){
+            /**
+             * Jika Bundle ada, ambil data dari Bundle
+             */
+            Bundle bundle = getIntent().getExtras();
+            tvData1.setText(bundle.getString("data1"));
+            tvData2.setText(bundle.getString("data2"));
+            tvData3.setText(bundle.getString("data3"));
+            tvData4.setText(bundle.getString("data4"));
+            tvData5.setText(bundle.getString("data5"));
 
-        namaMhs.setText("Nama : "+name);
-        nimMhs.setText("NIM   : "+nim);
-
+        }else{
+            /**
+             * Apabila Bundle tidak ada, ambil dari Intent
+             */
+            tvData1.setText(getIntent().getStringExtra("data1"));
+            tvData2.setText(getIntent().getStringExtra("data2"));
+            tvData3.setText(getIntent().getStringExtra("data3"));
+            tvData4.setText(getIntent().getStringExtra("data4"));
+            tvData5.setText(getIntent().getStringExtra("data5"));
+        }
     }
+
 }
