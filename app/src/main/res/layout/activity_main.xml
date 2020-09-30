@@ -86,15 +86,13 @@
                     android:id="@+id/radioButton"
                     android:layout_width="185dp"
                     android:layout_height="wrap_content"
-                    android:autofillHints="@string/laki_laki"
-                    android:hint="Laki Laki" />
+                    android:text="Laki Laki" />
 
                 <RadioButton
                     android:id="@+id/radioButton2"
                     android:layout_width="185dp"
                     android:layout_height="wrap_content"
-                    android:autofillHints="@string/perempuan"
-                    android:hint="Perempuan" />
+                    android:text="Perempuan" />
             </RadioGroup>
 
             <Spinner

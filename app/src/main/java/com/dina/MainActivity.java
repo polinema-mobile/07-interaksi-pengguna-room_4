@@ -54,19 +54,29 @@ public class MainActivity extends AppCompatActivity {
         edtNim = (EditText) findViewById(R.id.edtNim);
         edtTanggalLahir = (EditText) findViewById(R.id.edtTanggalLahir);
         radioGroup = findViewById(R.id.radioGroup);
-        jenis_kelamin = findViewById(R.id.radioGroup);
         radioButton = findViewById(R.id.radioButton);
         radioButton2 = findViewById(R.id.radioButton2);
         spinnerJurusan =(Spinner) findViewById(R.id.spinnerJurusan);
         btnGet = (Button) findViewById(R.id.btnSubmit);
+
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group1, int checkedId1) {
+                switch (checkedId1) {
+                    case R.id.radioButton://radiobuttonID
+                        //do what you want
+                        break;
+                    case R.id.radioButton2://radiobuttonID
+                        //do what you want
+                        break;
+                }
+            }
+        });
         btnGet.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 int selectedId = radioGroup.getCheckedRadioButtonId();
-                /**
-                 * Passing data via Intent
-                 */
 
                 Intent intent = new Intent(MainActivity.this, MainActivity2.class);
                 intent.putExtra("data1", edtNama.getText().toString());
