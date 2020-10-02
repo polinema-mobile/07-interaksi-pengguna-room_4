@@ -17,12 +17,12 @@ public class MainActivityParcelabel extends AppCompatActivity {
         TextView jk = (TextView) findViewById(R.id.item_jenis_kelamin);
         TextView jurusan = (TextView) findViewById(R.id.item_jurusan);
 
-        Mahasiswa biodata = getIntent().getParcelableExtra("BIODATA");
+        Mahasiswa mahasiswa = getIntent().getParcelableExtra("Parcelable");
 
-        nama.setText( biodata.getNama());
-        nim.setText(biodata.getNim());
-        tanggal.setText(biodata.getTanggal());
-        jk.setText (biodata.getJk());
-        jurusan.setText(biodata.getJurusan());
+        nama.setText( mahasiswa.getNama());
+        nim.setText(mahasiswa.getNim());
+        tanggal.setText(mahasiswa.getTanggal());
+        jk.setText (mahasiswa.getJk());
+        jurusan.setText(mahasiswa.getJurusan());
     }
 }

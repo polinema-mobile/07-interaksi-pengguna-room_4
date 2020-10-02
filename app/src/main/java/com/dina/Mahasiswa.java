@@ -3,7 +3,9 @@ package com.dina;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-class Mahasiswa implements Parcelable {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class Mahasiswa extends AppCompatActivity implements Parcelable {
 
     String nama, nim, tanggal, jk, jurusan;
 

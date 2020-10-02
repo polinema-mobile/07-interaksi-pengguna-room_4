@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity2">
+    tools:context=".MainActivityParcelabel">
 
     <TextView
         android:id="@+id/mahasiswa"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="BIODATA MAHASISWA (PARCELABLE)"
+        android:text="DATA MAHASISWA (PARCELABLE)"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,8 +59,6 @@
         android:id="@+id/jurusan"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
         android:text="Jurusan"
         app:layout_constraintStart_toStartOf="@id/jenis_kelamin_item"

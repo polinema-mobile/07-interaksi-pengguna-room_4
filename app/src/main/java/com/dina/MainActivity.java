@@ -18,13 +18,12 @@ import java.util.Calendar;
 
 public class MainActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
-    private RadioGroup jenis_kelamin;
     private RadioButton radioButton, radioButton2;
     EditText edtTanggalLahir, edtNama, edtNim;
     Spinner spinnerJurusan;
     Calendar calendar;
     DatePickerDialog picker;
-    Button btnGet;
+    Button btnGetIntent, btnGetParcelable;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,22 +56,9 @@ public class MainActivity extends AppCompatActivity {
         radioButton = findViewById(R.id.radioButton);
         radioButton2 = findViewById(R.id.radioButton2);
         spinnerJurusan =(Spinner) findViewById(R.id.spinnerJurusan);
-        btnGet = (Button) findViewById(R.id.btnSubmit);
+        btnGetIntent = (Button) findViewById(R.id.btnSubmit);
 
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group1, int checkedId1) {
-                switch (checkedId1) {
-                    case R.id.radioButton://radiobuttonID
-                        //do what you want
-                        break;
-                    case R.id.radioButton2://radiobuttonID
-                        //do what you want
-                        break;
-                }
-            }
-        });
-        btnGet.setOnClickListener(new View.OnClickListener() {
+        btnGetIntent.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
@@ -92,5 +78,20 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        btnGetParcelable = findViewById(R.id.btnParcelable);
+        btnGetParcelable.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MainActivityParcelabel.class);
+
+                int selectedId = radioGroup.getCheckedRadioButtonId();
+                RadioButton data4 = (RadioButton) findViewById(selectedId);
+                Mahasiswa mahasiswa = new Mahasiswa(edtNama.getText().toString(), edtNim.getText().toString(), edtTanggalLahir.getText().toString(), data4.getText().toString(), spinnerJurusan.getSelectedItem().toString());
+
+                intent.putExtra("Parcelable", mahasiswa);
+                startActivity(intent);
+            }
+        });
+
     }
 }
